@@ -67,6 +67,10 @@ jobs:
           tags: |
             type=sha,enable=true,prefix=${{ env.ENV_DEPLOY }}-
 
+      - name: test
+        run: |
+          ls ${{ github.workspace }}
+
       - name: Build and push Docker image
         if: ${{ success() }}
         uses: docker/build-push-action@v2
