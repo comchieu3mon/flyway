@@ -69,7 +69,7 @@ jobs:
 
       - name: test
         run: |
-          ls ${{ github.workspace }}
+          ls ${{ github.workspace }}/target
 
       - name: Build and push Docker image
         if: ${{ success() }}
