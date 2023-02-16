@@ -42,7 +42,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Package
-        run: mvn clean package -DskipTests
+        run: mvn clean install -DskipTests
 
       # Build and Push Docker image on Repository Github
       - name: Set up Docker Buildx
