@@ -1,0 +1,19 @@
+spring:
+  main:
+    web-application-type: none
+  datasource:
+    url: jdbc:postgresql://${COCKROACH_URI}:26257/${COCKROACH_DB}
+    username: ${COCKROACH_USERNAME}
+    password: ${COCKROACH_PASSWORD}
+    hikari:
+      autoCommit: false
+
+  jpa:
+    show-sql: true
+    hibernate:
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
